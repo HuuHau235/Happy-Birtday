@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // --- Nhạc nền ---
+    const music = document.getElementById('bg-music');
+    const playMusic = () => {
+        music.play().catch(() => {});
+        document.removeEventListener('click', playMusic);
+        document.removeEventListener('touchstart', playMusic);
+    };
+    music.play().catch(() => {
+        document.addEventListener('click', playMusic);
+        document.addEventListener('touchstart', playMusic);
+    });
     // --- Live Age Counter ---
-    const birthDate = new Date('2006-08-14T00:00:00');
+    const birthDate = new Date('1981-10-20T00:00:00');
     const countdownElement = document.getElementById('countdown');
 
     function updateAge() {
@@ -33,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
         duration: 800,
         once: true,
+        disable: false,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
     });
 
     // --- Initialize LightGallery ---
