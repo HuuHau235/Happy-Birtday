@@ -4,6 +4,23 @@ body {
     background-color: #F0F8FF;
     color: #2c3e50;
     overflow-x: hidden;
+    max-width: 100vw;
+}
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    img, video {
+        max-width: 100%;
+    }
+    #countdown {
+        font-size: 1rem;
+    }
 }
 .font-anime {
     font-family: 'Mochiy Pop One', sans-serif;
